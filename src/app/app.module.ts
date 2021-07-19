@@ -23,7 +23,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ButtonModule,
     ToastModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

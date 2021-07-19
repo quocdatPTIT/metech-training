@@ -15,9 +15,9 @@ export class PostsComponent implements OnInit {
   constructor(private postService: PostsService, private authService: AuthService, private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.authService.login('datsieunhan16@gmail.com', 'Dat10051998@@').subscribe(
-      (res) => console.log(res)
-    );
+    // this.authService.login('datsieunhan16@gmail.com', 'Dat10051998@@').subscribe(
+    //   (res) => localStorage.setItem('auth', JSON.stringify(res))
+    // );
     this.postService.getPosts().subscribe(
       (res) => console.log(res)
     );
@@ -27,11 +27,11 @@ export class PostsComponent implements OnInit {
       title: 'Tieu de test'
     };
 
-    this.postService.addPost(newPosts).subscribe(
-      (res) => {
-        this.messageService.add({ severity: ToastServerity.SUCCESS, summary: 'Thành công', detail: 'Lưu thành công' });
-      }
-    );
+    // this.postService.addPost(newPosts).subscribe(
+    //   (res) => {
+    //     this.messageService.add({ severity: ToastServerity.SUCCESS, summary: 'Thành công', detail: 'Lưu thành công' });
+    //   }
+    // );
   }
 
 }
